@@ -23,24 +23,22 @@
       line-height: 1.6;
     }
 
+    /* MODIFIED: Header now justifies navigation to the right */
     header {
       background-color: var(--light-brown);
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end; /* Pushes nav to the right */
       padding: 12px 24px;
       flex-wrap: wrap;
     }
 
-    header img {
-      height: 48px;
-    }
+    /* REMOVED: header img rule is no longer needed */
 
     nav {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-      margin-top: 10px;
     }
 
     nav a {
@@ -64,22 +62,24 @@
       background-color: var(--light-cream);
     }
     
-    /* ADDED: Style for the large logo in the hero section */
+    /* MODIFIED: Increased the size of the hero logo */
     .hero .hero-logo {
-      max-width: 80%;
+      max-width: 90%;
       height: auto;
-      max-height: 250px; /* Control the max height */
-      margin-bottom: 20px;
+      max-height: 350px; /* Increased from 250px */
     }
 
+    /* MODIFIED: Re-added styles for the new title and subtitle */
     .hero h1 {
-      font-size: 2.4rem;
+      font-size: 3rem;
       margin-bottom: 12px;
+      color: var(--deep-brown);
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       max-width: 600px;
+      margin-bottom: 30px; /* Added space between subtitle and logo */
     }
     
     section img {
@@ -160,23 +160,18 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      header {
+        justify-content: center; /* Center nav on smaller screens */
+      }
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       nav {
-        justify-content: center;
+        margin-top: 0;
       }
     }
 
     @media (max-width: 480px) {
-      header {
-        flex-direction: column;
-        align-items: center;
-      }
-      nav {
-        gap: 12px;
-        margin-top: 8px;
-      }
       .hero p {
         font-size: 1rem;
       }
@@ -185,7 +180,6 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Wetewetehia Logo">
     <nav>
       <a href="#about">Mō mātou</a>
       <a href="#features">Āhuatanga</a>
@@ -194,6 +188,8 @@
   </header>
 
   <section class="hero">
+    <h1>Wetewetehia</h1>
+    <p>Hīkina te mānuka.</p>
     <img src="logo.png" alt="Wetewetehia" class="hero-logo">
   </section>
 
