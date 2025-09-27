@@ -1,198 +1,141 @@
 <!DOCTYPE html>
 <html lang="mi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wetewetehia | Te Taupānga Pātai Reo Māori (Māori Language Quiz App)</title>
-    <meta name="description" content="Whakamātauria tō mōhio ki te reo Māori mā ngā pātai poto ia rā. He taupānga pātai a Wetewetehia i hangaia hei āwhina i ngā ākonga o ngā taumata katoa.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wetewetehia</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdfaf5; /* cream */
+      color: #3e2c1c; /* dark brown */
+    }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    header {
+      background-color: #d2b48c; /* light brown */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
 
-    <style>
-        :root {
-            --primary-color: #20c997; /* A bright, modern green */
-            --light-grey: #f8f9fa;
-            --dark-text: #212529;
-            --light-text: #6c757d;
-            --body-font: 'Inter', sans-serif;
-        }
-        body {
-            font-family: var(--body-font);
-            margin: 0;
-            background-color: #fff;
-            color: var(--dark-text);
-        }
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .header {
-            padding: 20px 0;
-            border-bottom: 1px solid #dee2e6;
-        }
-        .logo {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: var(--dark-text);
-            text-decoration: none;
-        }
-        .hero {
-            padding: 80px 0;
-            text-align: center;
-        }
-        .hero-image {
-            max-width: 200px;
-            margin-bottom: 30px;
-            border-radius: 20px;
-        }
-        .hero h1 {
-            font-size: 3.2em;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 1.2em;
-            color: var(--light-text);
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 15px rgba(32, 201, 151, 0.4);
-        }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(32, 201, 151, 0.5);
-        }
-        .section {
-            padding: 80px 0;
-            background-color: var(--light-grey);
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 60px;
-        }
-        .post-preview {
-            background-color: #fff;
-            border: 1px solid #dee2e6;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            overflow: hidden;
-            transition: box-shadow 0.2s ease;
-        }
-        .post-preview:hover {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-        .post-preview a {
-            text-decoration: none;
-            color: var(--dark-text);
-        }
-        .post-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .post-content {
-            padding: 30px;
-        }
-        .post-content h3 {
-            margin-top: 0;
-            font-size: 1.8em;
-        }
-        .post-date {
-            color: var(--light-text);
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-        /* FOOTER STYLES */
-        .footer {
-            background-color: var(--dark-text);
-            color: #fff;
-            text-align: center;
-            padding: 40px 0;
-        }
-        .social-links {
-            margin-bottom: 20px;
-        }
-        .social-links a {
-            margin: 0 15px;
-            display: inline-block;
-            transition: transform 0.2s ease;
-        }
-        .social-links a:hover {
-            transform: scale(1.1);
-        }
-        .social-links svg {
-            width: 28px;
-            height: 28px;
-            fill: #fff;
-        }
-    </style>
+    header img {
+      height: 50px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #3e2c1c;
+      font-weight: bold;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #f5e6d3; /* lighter cream */
+    }
+
+    .hero img {
+      max-width: 350px;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+      color: #4b2e2e;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .feature {
+      background-color: #fff8f0;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .feature img {
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #d2b48c;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer img {
+      height: 40px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <img src="logo.jpg" alt="Wetewetehia Logo">
+    <nav>
+      <a href="#about">Mō mātou</a>
+      <a href="#features">Āhuatanga</a>
+      <a href="#contact">Whakapā</a>
+    </nav>
+  </header>
 
-    <header class="header">
-        <div class="container">
-            <a href="#" class="logo">Wetewetehia</a>
-        </div>
-    </header>
+  <section class="hero">
+    <h1>Wetewetehia</h1>
+    <p>Whakamātauria tō mōhio ki te reo Māori i ia rā.</p>
+    <img src="Boy And Girl Play8ing wetewetehia.png" alt="Ngā tamariki e tākaro ana i Wetewetehia">
+  </section>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <img src="images/hero-image.jpg" alt="Wetewetehia App Logo or promotional image" class="hero-image">
-                
-                <h1>Whakamātauria tō Mōhio ki te Reo Māori</h1>
-                <p>Hono mai ki Wetewetehia, te taupānga pātai o ia rā hei whakapakari i tō māramatanga ki te reo Māori.</p>
-                <a href="https://wetewetehia.web.app/" class="cta-button" target="_blank" rel="noopener noreferrer">Tīmatahia te Pātai!</a>
-            </div>
-        </section>
+  <section id="about">
+    <h2>Mō mātou</h2>
+    <p>He taupānga hei whakapakari i tō reo Māori mā te pātai, mā te whakautu.</p>
+    <img src="Kotahitanga.png" alt="Kotahitanga" style="height:120px; margin-top:20px;">
+  </section>
 
-        <section id="blog" class="section">
-            <div class="container">
-                <h2 class="section-title">Ngā Pānui Hou (Latest Posts)</h2>
-                
-                <div class="post-preview">
-                    <a href="post-1.html">
-                        <img src="images/post-image-1.jpg" alt="A descriptive alt text for your blog post image" class="post-image">
-                        <div class="post-content">
-                            <h3>Nau Mai, Haere Mai ki Wetewetehia!</h3>
-                            <p class="post-date">Hepetema 26, 2025</p>
-                            <p>Kua whakarewahia te taupānga pātai reo Māori, a Wetewetehia! Pānuihia ngā kōrero mō te tīmatanga o tēnei kaupapa...</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
+  <section id="features">
+    <h2>Āhuatanga</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="rataka.png" alt="Rātaka">
+        <h3>Rātaka</h3>
+        <p>Kia mau ki ngā pātai o ia rā.</p>
+      </div>
+      <div class="feature">
+        <img src="takaro_waea.png" alt="Tākaro Waea">
+        <h3>Tākaro Waea</h3>
+        <p>Tākaro mā tō pūkoro, ā, ki hea, ki hea rānei.</p>
+      </div>
+      <div class="feature">
+        <img src="koru.png" alt="Koru">
+        <h3>Whakatipu</h3>
+        <p>Kia tipu ai tō mōhio ki te reo, he rite ki te koru.</p>
+      </div>
+    </div>
+  </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://facebook.com/your-page" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.32 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
-                </a>
-                <a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
-                </a>
-                <a href="https://tiktok.com/@your-username" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                    <svg viewBox="0 0 24 24"><path d="M12.53.02c1.31-.02 2.63-.01 3.95.03 1.2.04 2.37.34 3.45 1.05 1.25.82 2.19 1.95 2.82 3.28.62 1.32 1.04 2.74 1.14 4.23.09 1.45.03 2.89-.13 4.33-.18 1.62-.78 3.14-1.88 4.45-1.14 1.35-2.65 2.32-4.38 2.86-1.55.49-3.2.53-4.82.23-1.42-.26-2.78-.88-3.98-1.78-1.18-.89-2.18-2.02-2.92-3.32-.73-1.29-1.2-2.73-1.42-4.22-.22-1.48-.2-2.99-.03-4.46.18-1.6.71-3.12 1.77-4.41 1.1-1.34 2.58-2.31 4.25-2.85.94-.3 1.92-.47 2.92-.51m.12 1.47c-.98.03-1.92.2-2.8.5-1.48.49-2.79 1.3-3.85 2.4-1.02 1.08-1.73 2.4-2.22 3.86-.48 1.44-.68 2.96-.6 4.5.08 1.54.38 3.05.95 4.47.57 1.4.1.41 2.85 2.42 4.3.97 1.45 1.7 3.01 2.22 4.67.51 1.63.74 3.33.64 5.04-.1 1.7-.58 3.32-1.44 4.79-1.26 2.18-3.17 3.65-5.46 4.33-1.6.48-3.28.48-4.92.02-1.63-.45-3.13-1.34-4.38-2.54-1.2-1.17-2.11-2.63-2.66-4.25-.54-1.6-.74-3.28-.64-4.98.1-1.7.57-3.33 1.41-4.86.83-1.52 2.01-2.77 3.48-3.71s3.13-1.57 4.88-1.48c1.72.08 3.34.63 4.79 1.58 1.43.94 2.59 2.24 3.4 3.76.83 1.53 1.31 3.2 1.42 4.93.11 1.72.03 3.45-.23 5.15-.26 1.7-.89 3.3-1.89 4.72-1.03 1.46-2.45 2.6-4.14 3.35-1.5.68-3.13.92-4.76.69-1.64-.23-3.18-.88-4.52-1.84-1.32-.95-2.42-2.21-3.24-3.66-.82-1.44-1.32-3.04-1.49-4.71-.16-1.64-.13-3.3.06-4.93.19-1.63.7-3.19 1.57-4.6.85-1.38 1.99-2.55 3.36-3.41 1.35-.85 2.87-1.37 4.45-1.52.97-.1 1.95-.08 2.92.05z"/></svg>
-                </a>
-            </div>
-            <p>&copy; 2025 Wetewetehia. Pūmau te mana.</p>
-        </div>
-    </footer>
-
+  <footer>
+    <img src="logo.jpg" alt="Wetewetehia Logo">
+    <p>&copy; 2025 Wetewetehia. Nā te iwi, mō te iwi.</p>
+  </footer>
 </body>
 </html>
