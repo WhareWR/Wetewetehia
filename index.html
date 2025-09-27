@@ -86,34 +86,59 @@
       text-align: center;
     }
 
+    /* MODIFIED: Section is now full height */
+    section#features {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box; /* Ensures padding is included in height calculation */
+    }
+
     section h2 {
       margin-bottom: 25px;
       color: var(--deep-brown);
       font-size: 2rem;
     }
 
+    /* MODIFIED: Grid items are larger and have more space */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
       margin-top: 20px;
+      width: 100%;
+      max-width: 1400px; /* Allow grid to be wider */
     }
 
+    /* MODIFIED: Cards have more padding for a larger look */
     .feature {
       background-color: var(--card-bg);
-      padding: 24px;
+      padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .feature:hover {
       transform: translateY(-6px);
     }
 
+    /* MODIFIED: Images are much larger */
     .feature img {
-      height: 80px;
+      height: 150px;
       margin-bottom: 16px;
+      object-fit: contain;
+    }
+    
+    /* ADDED: Specific class to make the logo the biggest */
+    .logo-feature-img {
+      height: 250px;
     }
 
     .feature h3 {
@@ -187,6 +212,9 @@
   <section id="features">
     <h2>Āhuatanga</h2>
     <div class="features">
+      <div class="feature">
+        <img src="logo.png" alt="Wetewetehia Logo" class="logo-feature-img">
+      </div>
       <div class="feature">
         <img src="rataka.png" alt="Rātaka">
         <h3>Rātaka</h3>
