@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wetewetehia</title>
+  <title>Wetewetehia | A Daily Te Reo Māori Learning App</title>
+  <meta name="description" content="Whakamātauria tō mōhio ki te reo Māori i ia rā. Wetewetehia is a fun, simple app designed to help you strengthen your te reo Māori with daily questions.">
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
     body {
@@ -11,6 +12,21 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #fdfaf5; /* cream */
       color: #3e2c1c; /* dark brown */
+    }
+
+    /* Accessibility: Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #3e2c1c;
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+    .skip-link:focus {
+      top: 0;
     }
 
     header {
@@ -24,12 +40,27 @@
     header img {
       height: 50px;
     }
+    
+    /* Accessibility: Semantic Nav List */
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+    }
 
     nav a {
       margin-left: 20px;
       text-decoration: none;
       color: #3e2c1c;
       font-weight: bold;
+      transition: color 0.2s;
+    }
+    
+    /* UX: Hover effect for links */
+    nav a:hover {
+      color: #8b4513;
+      text-decoration: underline;
     }
 
     .hero {
@@ -44,6 +75,7 @@
 
     .hero img {
       max-width: 350px;
+      width: 100%;
       margin-top: 20px;
       border-radius: 12px;
     }
@@ -51,17 +83,30 @@
     section {
       padding: 40px 20px;
       text-align: center;
+      border-top: 1px solid #e0d9cf; /* UX: Section separator */
+    }
+    
+    /* Remove border from hero section */
+    .hero {
+        border-top: none;
     }
 
     section h2 {
       margin-bottom: 20px;
       color: #4b2e2e;
     }
+    
+    #kotahitanga-img {
+        height: 120px;
+        margin-top: 20px;
+    }
 
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .feature {
@@ -69,6 +114,13 @@
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    
+    /* UX: Hover effect for feature cards */
+    .feature:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
 
     .feature img {
@@ -81,6 +133,7 @@
       text-align: center;
       padding: 20px;
       margin-top: 40px;
+      border-top: 1px solid #e0d9cf;
     }
 
     footer img {
@@ -91,48 +144,53 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
     <img src="logo.jpg" alt="Wetewetehia Logo">
     <nav>
-      <a href="#about">Mō mātou</a>
-      <a href="#features">Āhuatanga</a>
-      <a href="#contact">Whakapā</a>
+      <ul>
+        <li><a href="#about">Mō mātou</a></li>
+        <li><a href="#features">Āhuatanga</a></li>
+        <li><a href="#contact">Whakapā</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Wetewetehia</h1>
-    <p>Whakamātauria tō mōhio ki te reo Māori i ia rā.</p>
-    <img src="Boy And Girl Play8ing wetewetehia.png" alt="Ngā tamariki e tākaro ana i Wetewetehia">
-  </section>
+  <main id="main-content">
+    <section class="hero">
+      <h1>Wetewetehia</h1>
+      <p>Whakamātauria tō mōhio ki te reo Māori i ia rā.</p>
+      <img src="tamariki-playing.png" alt="Two illustrated tamariki, a boy and girl, playing and learning with Wetewetehia.">
+    </section>
 
-  <section id="about">
-    <h2>Mō mātou</h2>
-    <p>He taupānga hei whakapakari i tō reo Māori mā te pātai, mā te whakautu.</p>
-    <img src="Kotahitanga.png" alt="Kotahitanga" style="height:120px; margin-top:20px;">
-  </section>
+    <section id="about">
+      <h2>Mō mātou</h2>
+      <p>He taupānga hei whakapakari i tō reo Māori mā te pātai, mā te whakautu.</p>
+      <img id="kotahitanga-img" src="Kotahitanga.png" alt="A symbol of Kotahitanga, representing unity and community.">
+    </section>
 
-  <section id="features">
-    <h2>Āhuatanga</h2>
-    <div class="features">
-      <div class="feature">
-        <img src="rataka.png" alt="Rātaka">
-        <h3>Rātaka</h3>
-        <p>Kia mau ki ngā pātai o ia rā.</p>
+    <section id="features">
+      <h2>Āhuatanga</h2>
+      <div class="features">
+        <div class="feature">
+          <img src="rataka.png" alt="An icon for daily questions.">
+          <h3>Rātaka</h3>
+          <p>Kia mau ki ngā pātai o ia rā.</p>
+        </div>
+        <div class="feature">
+          <img src="takaro_waea.png" alt="An icon showing a mobile phone.">
+          <h3>Tākaro Waea</h3>
+          <p>Tākaro mā tō pūkoro, ā, ki hea, ki hea rānei.</p>
+        </div>
+        <div class="feature">
+          <img src="koru.png" alt="An icon of a Koru, symbolizing growth.">
+          <h3>Whakatipu</h3>
+          <p>Kia tipu ai tō mōhio ki te reo, he rite ki te koru.</p>
+        </div>
       </div>
-      <div class="feature">
-        <img src="takaro_waea.png" alt="Tākaro Waea">
-        <h3>Tākaro Waea</h3>
-        <p>Tākaro mā tō pūkoro, ā, ki hea, ki hea rānei.</p>
-      </div>
-      <div class="feature">
-        <img src="koru.png" alt="Koru">
-        <h3>Whakatipu</h3>
-        <p>Kia tipu ai tō mōhio ki te reo, he rite ki te koru.</p>
-      </div>
-    </div>
-  </section>
-
+    </section>
+  </main>
+  
   <footer>
     <img src="logo.jpg" alt="Wetewetehia Logo">
     <p>&copy; 2025 Wetewetehia. Nā te iwi, mō te iwi.</p>
