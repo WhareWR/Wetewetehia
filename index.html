@@ -63,6 +63,14 @@
       padding: 60px 20px;
       background-color: var(--light-cream);
     }
+    
+    /* ADDED: Style for the large logo in the hero section */
+    .hero .hero-logo {
+      max-width: 80%;
+      height: auto;
+      max-height: 250px; /* Control the max height */
+      margin-bottom: 20px;
+    }
 
     .hero h1 {
       font-size: 2.4rem;
@@ -73,8 +81,8 @@
       font-size: 1.1rem;
       max-width: 600px;
     }
-
-    .hero img {
+    
+    section img {
       max-width: 100%;
       height: auto;
       margin-top: 20px;
@@ -86,14 +94,13 @@
       text-align: center;
     }
 
-    /* MODIFIED: Section is now full height */
     section#features {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      box-sizing: border-box; /* Ensures padding is included in height calculation */
+      box-sizing: border-box; 
     }
 
     section h2 {
@@ -102,17 +109,15 @@
       font-size: 2rem;
     }
 
-    /* MODIFIED: Grid items are larger and have more space */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 32px;
       margin-top: 20px;
       width: 100%;
-      max-width: 1400px; /* Allow grid to be wider */
+      max-width: 1400px; 
     }
 
-    /* MODIFIED: Cards have more padding for a larger look */
     .feature {
       background-color: var(--card-bg);
       padding: 30px;
@@ -129,16 +134,10 @@
       transform: translateY(-6px);
     }
 
-    /* MODIFIED: Images are much larger */
     .feature img {
       height: 150px;
       margin-bottom: 16px;
       object-fit: contain;
-    }
-    
-    /* ADDED: Specific class to make the logo the biggest */
-    .logo-feature-img {
-      height: 250px;
     }
 
     .feature h3 {
@@ -164,7 +163,6 @@
       .hero h1 {
         font-size: 2rem;
       }
-
       nav {
         justify-content: center;
       }
@@ -175,12 +173,10 @@
         flex-direction: column;
         align-items: center;
       }
-
       nav {
         gap: 12px;
         margin-top: 8px;
       }
-
       .hero p {
         font-size: 1rem;
       }
@@ -198,23 +194,18 @@
   </header>
 
   <section class="hero">
-    <h1>Wetewetehia</h1>
-    <p>Whakamātauria tō mōhio ki te reo Māori i ia rā.</p>
-    <img src="Boy_And_Girl_Playing_wetewetehia.png" alt="Ngā tamariki e tākaro ana i te Wetewetehia">
+    <img src="logo.png" alt="Wetewetehia" class="hero-logo">
   </section>
 
   <section id="about">
-    <h2>Mō mātou</h2>
-    <p>He taupānga hei whakapakari i tō reo Māori mā te pātai, mā te whakautu.</p>
-    <img src="Kotahitanga.png" alt="Kotahitanga">
+    <h2>Mā Te Katoa</h2>
+    <p>He tāupānga whakahikohiko i te ngākau, i te hinengaro, mā ngā wairua katoa.</p>
+    <img src="Boy_And_Girl_Playing_wetewetehia.png" alt="Ngā tamariki e tākaro ana i te Wetewetehia">
   </section>
 
   <section id="features">
     <h2>Āhuatanga</h2>
     <div class="features">
-      <div class="feature">
-        <img src="logo.png" alt="Wetewetehia Logo" class="logo-feature-img">
-      </div>
       <div class="feature">
         <img src="rataka.png" alt="Rātaka">
         <h3>Rātaka</h3>
